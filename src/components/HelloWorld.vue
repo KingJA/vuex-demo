@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <button @click="addCount">添加</button>
     <button @click="reduceCount">减少</button>
-    <p>{{count}}</p>
+    <p>{{currentCount}}</p>
   </div>
 </template>
 
@@ -33,7 +33,7 @@
     },
     computed: {
       ...mapGetters([
-        'count'
+        'currentCount'
       ])
     }
   }

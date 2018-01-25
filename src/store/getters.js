@@ -1,1 +1,4 @@
-export const count = state => state.count;
+export const currentCount = state => state.count;
+// export const count = function (state) {
+//   state.count;
+// };

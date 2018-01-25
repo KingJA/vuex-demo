@@ -18,3 +18,13 @@ export default new Vuex.Store({
   strict: debug,
   plugins: debug ? [createLogger()] : []
 })
+
+// export interface StoreOptions<S> {
+// actions?: ActionTree<S, S>;
+// getters?: GetterTree<S, S>;
+// state?: S;
+// mutations?: MutationTree<S>;
+// strict?: boolean;
+// plugins?: Plugin<S>[];
+// modules?: ModuleTree<S>;
+// }
