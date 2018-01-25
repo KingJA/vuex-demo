@@ -1,10 +1,10 @@
 import * as types from './mutation-types'
 
 const matuations = {
-  [types.ADD](state, count) {
+  [types.ADD](state) {
     state.count += 1;
   },
-  [types.REDUCE](state, count) {
+  [types.REDUCE](state) {
     state.count -= 1;
   },
 }
