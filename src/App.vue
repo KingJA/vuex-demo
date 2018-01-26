@@ -1,7 +1,15 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <p>
+      <router-link to="/">Go to First</router-link>
+      <router-link to="/Second">Go to Second</router-link>
+    </p>
+    <keep-alive>
+
     <router-view/>
+
+    </keep-alive>
   </div>
 </template>
 

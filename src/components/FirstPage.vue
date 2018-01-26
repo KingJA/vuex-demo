@@ -1,21 +1,29 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
-    <button @click="addCount">添加</button>
-    <button @click="reduceCount">减少</button>
-    <p>{{currentCount}}</p>
+    <h1>Welcome to FirstPage</h1>
+    <button @click="reduceCount"> -</button>
+    <span>{{currentCount}}</span>
+    <button @click="addCount"> +</button>
+    <div v-if="false">
+      <input v-model="msg"/>
+      <button @click="saveMsg(msg)">Save Msg</button>
+    </div>
+
+
   </div>
 </template>
 
 <script type="text/ecmascript-6">
   import {mapMutations} from 'vuex'
   import {mapGetters} from 'vuex'
+  import Second from './SecondPage'
 
   export default {
-    name: 'HelloWorld',
+    name: 'FirstPage',
     data() {
       return {
-        msg: 'Welcome to Your Vue.js App'
+        msg: 'Message from FirstPage',
+
       }
     },
     methods: {
@@ -25,9 +33,13 @@
       reduceCount() {
         this.reduce();
       },
+      saveMsg(msg) {
+        this.setMsg(msg);
+      },
       ...mapMutations({
         add: 'ADD',
-        reduce: 'REDUCE'
+        reduce: 'REDUCE',
+        setMsg: 'SET_MSG'
       })
 
     },
@@ -35,6 +47,9 @@
       ...mapGetters([
         'currentCount'
       ])
+    },
+    components: {
+      Second
     }
   }
 </script>
